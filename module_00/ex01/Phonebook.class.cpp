@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 08:52:21 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/14 08:58:44 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/14 09:02:35 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	Phonebook::add_contact(void)
 	std::cout << "Adding new contact to slot " << this->_nbr_of_contact % 8 << "/7." << std::endl;
 	std::cout << "First name : ";
 //	std::cin >> this->_contact_array[this->_nbr_of_contact % 8].first_name;
-	std::getline(std::cin, this->_contact_array[this->_nbr_of_contact % 8].first_name);
+	std::getline(std::cin >> std::ws, this->_contact_array[this->_nbr_of_contact % 8].first_name);
 
 	std::cout << "Last name : ";
 //	std::cin >> this->_contact_array[this->_nbr_of_contact % 8].last_name;
