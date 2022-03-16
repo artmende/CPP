@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 08:52:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/12 06:15:09 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/16 11:11:15 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
 	~Phonebook(void);
 	void	add_contact(void);
 	void	search(void) const;
+	void	look_up_contact(void) const;
 };
 
 #endif
