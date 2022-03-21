@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 08:52:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/16 11:11:15 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/21 06:32:40 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Phonebook
 {
 private:
 	Contact	_contact_array[8];
-	int		_nbr_of_contact; // init at 0
+	int		_nbr_of_contact;
 public:
 	Phonebook(void);
 	~Phonebook(void);
