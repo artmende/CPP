@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 06:46:18 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/18 10:53:24 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/21 14:35:25 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ _nbWithdrawals(0)
 	std::cout << " index:";
 	std::cout << this->_accountIndex;
 	std::cout << ";amount:";
-//	std::cout << this->_amount;
 	std::cout << this->checkAmount();
 	std::cout << ";created" << std::endl;
 }
@@ -37,7 +36,6 @@ Account::~Account(void)
 	std::cout << " index:";
 	std::cout << this->_accountIndex;
 	std::cout << ";amount:";
-//	std::cout << this->_amount;
 	std::cout << this->checkAmount();
 	std::cout << ";closed" << std::endl;
 }
@@ -81,7 +79,6 @@ void	Account::makeDeposit(int deposit)
 	std::cout << " index:";
 	std::cout << this->_accountIndex;
 	std::cout << ";p_amount:";
-//	std::cout << this->_amount;
 	std::cout << this->checkAmount();
 
 	this->_amount += deposit;
@@ -92,7 +89,6 @@ void	Account::makeDeposit(int deposit)
 	std::cout << ";deposit:";
 	std::cout << deposit;
 	std::cout << ";amount:";
-//	std::cout << this->_amount;
 	std::cout << this->checkAmount();
 	std::cout << ";nb_deposits:";
 	std::cout << this->_nbDeposits << std::endl;
@@ -104,7 +100,6 @@ bool	Account::makeWithdrawal(int withdrawal)
 	std::cout << " index:";
 	std::cout << this->_accountIndex;
 	std::cout << ";p_amount:";
-//	std::cout << this->_amount;
 	std::cout << this->checkAmount();
 
 	if (this->_amount < withdrawal)
@@ -121,7 +116,6 @@ bool	Account::makeWithdrawal(int withdrawal)
 		std::cout << ";withdrawal:";
 		std::cout << withdrawal;
 		std::cout << ";amount:";
-//		std::cout << this->_amount;
 		std::cout << this->checkAmount();
 		std::cout << ";nb_withdrawals:";
 		std::cout << this->_nbWithdrawals << std::endl;
@@ -140,7 +134,6 @@ void	Account::displayStatus(void) const
 	std::cout << " index:";
 	std::cout << this->_accountIndex;
 	std::cout << ";amount:";
-//	std::cout << this->_amount;
 	std::cout << this->checkAmount();
 	std::cout << ";deposits:";
 	std::cout << this->_nbDeposits;
@@ -155,9 +148,27 @@ int	Account::_totalNbWithdrawals = 0;
 
 void	Account::_displayTimestamp(void)
 {
-//	std::cout << "[19920104_091532]";
 	time_t now = time(0);
-	std::cout << ctime(&now);
+	tm	*ltm = localtime(&now);
+
+	std::cout << "[" << (ltm->tm_year + 1900);
+	if (std::to_string(ltm->tm_mon + 1).length() < 2)
+		std::cout << "0";
+	std::cout << ltm->tm_mon + 1;
+	if (std::to_string(ltm->tm_mday).length() < 2)
+		std::cout << "0";
+	std::cout << ltm->tm_mday << "_";
+	if (std::to_string(ltm->tm_hour).length() < 2)
+		std::cout << "0";
+	std::cout << ltm->tm_hour;
+	if (std::to_string(ltm->tm_min).length() < 2)
+		std::cout << "0";
+	std::cout << ltm->tm_min;
+	if (std::to_string(ltm->tm_sec).length() < 2)
+		std::cout << "0";
+	std::cout << ltm->tm_sec << "]";
+
+//	std::cout << "[19920104_091532]";
 }
 
 
