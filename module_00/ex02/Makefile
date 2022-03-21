@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/21 08:15:52 by artmende          #+#    #+#              #
-#    Updated: 2022/03/21 15:58:45 by artmende         ###   ########.fr        #
+#    Created: 2022/03/21 15:51:57 by artmende          #+#    #+#              #
+#    Updated: 2022/03/21 15:57:50 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,15 +14,14 @@ CC = clang++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	./phonebook.main.cpp \
-		./Phonebook.cpp \
-		./Contact.cpp \
+SRCS =	./Account.cpp \
+		./tests.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -f
 
-NAME = phonebook
+NAME = tests_account
 
 all: $(NAME)
 
