@@ -6,11 +6,11 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/21 15:51:57 by artmende          #+#    #+#              #
-#    Updated: 2022/03/21 15:57:50 by artmende         ###   ########.fr        #
+#    Updated: 2022/03/23 12:49:00 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = clang++
+CC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -27,6 +27,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
+
+.cpp.o:
+	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
 
 clean:
 	$(RM) $(OBJS)

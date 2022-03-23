@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/18 06:46:18 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/21 16:00:28 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/23 12:58:55 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,19 +152,19 @@ void	Account::_displayTimestamp(void)
 	tm	*ltm = localtime(&now);
 
 	std::cout << "[" << (ltm->tm_year + 1900);
-	if (std::to_string(ltm->tm_mon + 1).length() < 2)
+	if (ltm->tm_mon + 1 < 10)
 		std::cout << "0";
 	std::cout << ltm->tm_mon + 1;
-	if (std::to_string(ltm->tm_mday).length() < 2)
+	if (ltm->tm_mday < 10)
 		std::cout << "0";
 	std::cout << ltm->tm_mday << "_";
-	if (std::to_string(ltm->tm_hour).length() < 2)
+	if (ltm->tm_hour < 10)
 		std::cout << "0";
 	std::cout << ltm->tm_hour;
-	if (std::to_string(ltm->tm_min).length() < 2)
+	if (ltm->tm_min < 10)
 		std::cout << "0";
 	std::cout << ltm->tm_min;
-	if (std::to_string(ltm->tm_sec).length() < 2)
+	if (ltm->tm_sec < 10)
 		std::cout << "0";
 	std::cout << ltm->tm_sec << "]";
 
