@@ -6,13 +6,13 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/25 15:00:12 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/25 16:42:39 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/25 16:54:43 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 
-HumanB::HumanB(std::string name) : _name(name)
+HumanB::HumanB(std::string name) : _name(name), _weapon(NULL)
 {}
 
 HumanB::~HumanB(void)
