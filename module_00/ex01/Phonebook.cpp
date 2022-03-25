@@ -6,11 +6,11 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 08:52:21 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/21 07:59:47 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/25 13:14:21 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.main.hpp"
+#include "Phonebook.hpp"
 
 Phonebook::Phonebook(void) : _nbr_of_contact(-1)
 {}

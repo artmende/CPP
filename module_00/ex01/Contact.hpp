@@ -6,14 +6,16 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 08:54:58 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/21 07:35:26 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/25 13:14:35 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_HPP
 # define CONTACT_CLASS_HPP
 
-# include "phonebook.main.hpp"
+# include <iostream>
+# include <iomanip>
+# include <string>
 
 class Contact
 {

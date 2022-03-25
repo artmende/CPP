@@ -6,13 +6,13 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/23 13:03:14 by artmende          #+#    #+#              #
-#    Updated: 2022/03/23 15:14:30 by artmende         ###   ########.fr        #
+#    Updated: 2022/03/25 12:56:55 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
+CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =	./Zombie.cpp \
 		./zombieHorde.cpp \
@@ -27,10 +27,10 @@ NAME = Moar_brainz
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) -o $(NAME) $(CFLAGS) $(OBJS)
+	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 .cpp.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.cpp=.o)
+	$(CXX) $(CXXFLAGS) -c $< -o $(<:.cpp=.o)
 
 clean:
 	$(RM) $(OBJS)

@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.main.hpp                                 :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 06:26:36 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/16 12:22:07 by artmende         ###   ########.fr       */
+/*   Created: 2022/03/25 14:36:46 by artmende          #+#    #+#             */
+/*   Updated: 2022/03/25 15:09:42 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_MAIN_HPP
-# define PHONEBOOK_MAIN_HPP
+#include "HumanA.hpp"
 
-# include <iostream>
-# include <iomanip>
-# include <string>
-# include "Contact.hpp"
-# include "Phonebook.hpp"
+HumanA::HumanA(std::string name, Weapon &weapon) : _name(name), _weapon(weapon)
+{}
 
-#endif
+HumanA::~HumanA(void)
+{}
+
+void	HumanA::attack(void) const
+{
+	std::cout << this->_name << " attacks with their ";
+	std::cout << this->_weapon.get_type() << std::endl;
+}

@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 08:52:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/25 13:14:02 by artmende         ###   ########.fr       */
+/*   Created: 2022/03/25 12:58:19 by artmende          #+#    #+#             */
+/*   Updated: 2022/03/25 16:07:33 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
-# include "Contact.hpp" 
+# include <iostream>
 
-class Phonebook
+class Weapon
 {
 private:
-	Contact	_contact_array[8];
-	int		_nbr_of_contact;
+	std::string	_type;
 public:
-	Phonebook(void);
-	~Phonebook(void);
-	void	add_contact(void);
-	void	search(void) const;
-	void	look_up_contact(void) const;
+	Weapon(std::string type);
+	~Weapon();
+	void		setType(std::string new_type);
+	std::string	const &get_type(void) const;
 };
 
 #endif

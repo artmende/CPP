@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.hpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/21 08:52:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/25 13:14:02 by artmende         ###   ########.fr       */
+/*   Created: 2022/03/25 13:28:19 by artmende          #+#    #+#             */
+/*   Updated: 2022/03/25 16:41:25 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
-# include "Contact.hpp" 
+# include "Weapon.hpp"
 
-class Phonebook
+class HumanB
 {
 private:
-	Contact	_contact_array[8];
-	int		_nbr_of_contact;
+	std::string	_name;
+	Weapon		*_weapon;
 public:
-	Phonebook(void);
-	~Phonebook(void);
-	void	add_contact(void);
-	void	search(void) const;
-	void	look_up_contact(void) const;
+	HumanB(std::string name);
+	~HumanB();
+	void	attack(void) const;
+	void	setWeapon(Weapon &weapon);
 };
 
 #endif

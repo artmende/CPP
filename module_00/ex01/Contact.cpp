@@ -6,11 +6,11 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/21 08:54:53 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/21 08:00:39 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/25 13:14:47 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.main.hpp"
+#include "Contact.hpp"
 
 Contact::Contact(void)
 {}
