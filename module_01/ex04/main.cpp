@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 13:29:59 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/28 15:48:16 by artmende         ###   ########.fr       */
+/*   Updated: 2022/03/28 18:22:04 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 #include <string>
 #include <fstream>
 
-void	fill_intermediate_str(std::string *str, std::string file_name)
+int	fill_intermediate_str(std::string *str, std::string infile_name)
 {
-	std::ifstream	file(file_name);
+	int				return_value = 0;
+	std::ifstream	file(infile_name.c_str());
 	std::string		buffer;
 
 	while (file.good())
@@ -27,8 +28,12 @@ void	fill_intermediate_str(std::string *str, std::string file_name)
 		str->append(buffer);
 	}
 	if (file.eof() == false)
-		std::cout << "Error while reading the file '" << file_name << "'" << std::endl;
+	{
+		std::cout << "Error while reading the file '" << infile_name << "'" << std::endl;
+		return_value = -1;
+	}
 	file.close();
+	return (return_value);
 }
 
 void	replace_word_in_str(std::string *str, std::string w1, std::string w2)
@@ -42,21 +47,34 @@ void	replace_word_in_str(std::string *str, std::string w1, std::string w2)
 	}
 }
 
+int	create_outfile(std::string original_name, std::string str_to_print)
+{
+	int				return_value = 0;
+	std::string		outfile_name = original_name.append(".replace");
+	std::ofstream	outfile(outfile_name.c_str());
+
+	if (outfile.good() == false)
+	{
+		std::cout << "Error while writing to outfile" << std::endl;
+		return_value = 1;
+	}
+	else
+		outfile << str_to_print;
+	outfile.close();
+	return (return_value);
+}
+
 int	main(int argc, char **argv)
 {
-	if (argc != 4)
+	if (argc != 4 || ((std::string)argv[1]).length() == 0
+		|| ((std::string)argv[2]).length() == 0)
 	{
 		std::cout << "Usage : ./replace FILENAME String1 String2" << std::endl;
 		return (1);
 	}
-
-	std::string	intermediate_string;
-
-	fill_intermediate_str(&intermediate_string, argv[1]);
-
+	std::string	intermediate_string = "";
+	if (1 == fill_intermediate_str(&intermediate_string, argv[1]))
+		return (1);
 	replace_word_in_str(&intermediate_string, argv[2], argv[3]);
-
-	std::cout << intermediate_string << std::endl;
-
-	return (0);
+	return (create_outfile(argv[1], intermediate_string));
 }
