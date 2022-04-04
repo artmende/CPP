@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:55:46 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/03 11:08:19 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/04 09:43:15 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,38 @@ bool	Fixed::operator<=(Fixed const & rhs) const
 	return (*this == rhs || *this < rhs);
 }
 
+Fixed	Fixed::operator+(Fixed const & rhs) const
+{
+	Fixed	ret;
+
+	ret.setRawBits(this->getRawBits() + rhs.getRawBits());
+	return (ret);
+}
+
+Fixed	Fixed::operator-(Fixed const & rhs) const
+{
+	Fixed	ret;
+
+	ret.setRawBits(this->getRawBits() - rhs.getRawBits());
+	return (ret);
+}
+
+Fixed	Fixed::operator*(Fixed const & rhs) const
+{
+	Fixed	ret;
+
+	ret.setRawBits((this->getRawBits() * rhs.getRawBits()) >> this->_nbr_of_fract_bits);
+	return (ret);
+}
+
+Fixed	Fixed::operator/(Fixed const & rhs) const
+{
+	Fixed	ret(this->toFloat() / rhs.toFloat());
+
+//	ret.setRawBits((this->getRawBits() / rhs.getRawBits()) << this->_nbr_of_fract_bits);
+	return (ret);
+}
+
 Fixed &	Fixed::operator++() // ++nbr;
 {
 	this->setRawBits(this->getRawBits() + 1);
@@ -130,6 +162,26 @@ int	Fixed::toInt() const
 	return (this->getRawBits() >> this->_nbr_of_fract_bits);
 }
 
+////////////////////	non-Member (static) functions	////////////////////
+const Fixed &	Fixed::min(const Fixed & a, const Fixed & b)
+{
+	return (a > b ? b : a);
+}
+
+Fixed &	Fixed::min(Fixed & a, Fixed & b)
+{
+	return (a > b ? b : a);
+}
+
+const Fixed &	Fixed::max(const Fixed & a, const Fixed & b)
+{
+	return (a < b ? b : a);
+}
+
+Fixed &	Fixed::max(Fixed & a, Fixed & b)
+{
+	return (a < b ? b : a);
+}
 
 ////////////////////	Other stuff outside of the class	////////////////////
 std::ostream &	operator<<(std::ostream & o, Fixed const & i)

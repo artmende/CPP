@@ -6,23 +6,31 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:50:21 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/03 11:04:20 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/04 09:39:26 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-int	main(void)
-{
-	Fixed	a;
-	Fixed	b(71);
-	Fixed	c(71.0f);
-
+int main( void ) {
+Fixed a;
+Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 std::cout << a << std::endl;
 std::cout << ++a << std::endl;
 std::cout << a << std::endl;
 std::cout << a++ << std::endl;
 std::cout << a << std::endl;
+std::cout << b << std::endl;
+std::cout << Fixed::max( a, b ) << std::endl;
+
+std::cout << std::endl << "tests below" << std::endl;
+
+std::cout << Fixed(6) * Fixed(3.467f) << std::endl;
+std::cout << Fixed(63.3636f) / Fixed(4) << std::endl;
+std::cout << Fixed(2) - Fixed(21) << std::endl;
+std::cout << Fixed(1) / Fixed(4) << std::endl;
+
+return 0;
 
 
 /* 

@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:54:35 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/03 11:06:02 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/04 08:59:20 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,11 @@ public:
 	void	setRawBits(int const raw);
 	float	toFloat() const;
 	int		toInt() const;
+
+	static const Fixed &	min(const Fixed & a, const Fixed & b);
+	static Fixed &	min(Fixed & a, Fixed & b);
+	static const Fixed &	max(const Fixed & a, const Fixed & b);
+	static Fixed &	max(Fixed & a, Fixed & b);
 };
 
 std::ostream &	operator<<(std::ostream & o, Fixed const & i);
