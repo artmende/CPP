@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:55:46 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/03 09:15:33 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:24:58 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,21 +15,18 @@
 Fixed::Fixed() : _nbr_of_fract_bits(8)
 {
 	std::cout << "Default constructor called" << std::endl;
-//	this->_value = 0;
 	this->setRawBits(0);
 }
 
 Fixed::Fixed(Fixed const & src) : _nbr_of_fract_bits(8)
 {
 	std::cout << "Copy constructor called" << std::endl;
-//	this->_value = src.getRawBits();
-	this->setRawBits(src.getRawBits());
+	*this = src;
 }
 
 Fixed::Fixed(int const i) : _nbr_of_fract_bits(8)
 {
 	std::cout << "Int constructor called" << std::endl;
-//	this->_value = i << this->_nbr_of_fract_bits;
 	this->setRawBits(i << this->_nbr_of_fract_bits);
 	// bit shifting to add 0 to the right. because i is an integer, nothing after the point
 }
@@ -37,7 +34,6 @@ Fixed::Fixed(int const i) : _nbr_of_fract_bits(8)
 Fixed::Fixed(float const f) : _nbr_of_fract_bits(8)
 {
 	std::cout << "Float constructor called" << std::endl;
-//	this->_value = (int)roundf(f * (1 << this->_nbr_of_fract_bits));
 	this->setRawBits(roundf(f * (1 << this->_nbr_of_fract_bits)));
 	// Multiply the float by 2 to the power of _nbr_of_fract_bits
 	// then store as int
@@ -53,7 +49,6 @@ Fixed &	Fixed::operator=(Fixed const & rhs)
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 		this->setRawBits(rhs.getRawBits());
-//		this->_value = rhs.getRawBits();
 	return (*this);
 }
 

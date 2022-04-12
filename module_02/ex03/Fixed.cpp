@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:55:46 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/12 09:53:59 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:29:28 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::Fixed() : _nbr_of_fract_bits(8)
 
 Fixed::Fixed(Fixed const & src) : _nbr_of_fract_bits(8)
 {
-	this->setRawBits(src.getRawBits());
+	*this = src;
 }
 
 Fixed::Fixed(int const i) : _nbr_of_fract_bits(8)

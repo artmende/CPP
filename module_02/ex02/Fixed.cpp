@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:55:46 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/04 09:43:15 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:28:58 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Fixed::Fixed() : _nbr_of_fract_bits(8)
 
 Fixed::Fixed(Fixed const & src) : _nbr_of_fract_bits(8)
 {
-	this->setRawBits(src.getRawBits());
+	*this = src;
 }
 
 Fixed::Fixed(int const i) : _nbr_of_fract_bits(8)
@@ -38,7 +38,6 @@ Fixed::Fixed(float const f) : _nbr_of_fract_bits(8)
 
 Fixed::~Fixed()
 {}
-
 
 ////////////////////	Operator overload	////////////////////
 
@@ -99,9 +98,11 @@ Fixed	Fixed::operator-(Fixed const & rhs) const
 
 Fixed	Fixed::operator*(Fixed const & rhs) const
 {
+	//	https://www.youtube.com/watch?v=npQF28g6s_k
+	//	https://en.wikipedia.org/wiki/Fixed-point_arithmetic
 	Fixed	ret;
 
-	ret.setRawBits((this->getRawBits() * rhs.getRawBits()) >> this->_nbr_of_fract_bits);
+	ret.setRawBits(((long long)this->getRawBits() * (long long)rhs.getRawBits()) >> this->_nbr_of_fract_bits);
 	return (ret);
 }
 
@@ -109,7 +110,7 @@ Fixed	Fixed::operator/(Fixed const & rhs) const
 {
 	Fixed	ret(this->toFloat() / rhs.toFloat());
 
-//	ret.setRawBits((this->getRawBits() / rhs.getRawBits()) << this->_nbr_of_fract_bits);
+//	ret.setRawBits(((long long)this->getRawBits() << this->_nbr_of_fract_bits) / rhs.getRawBits());
 	return (ret);
 }
 

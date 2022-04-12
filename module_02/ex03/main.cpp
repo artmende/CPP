@@ -6,14 +6,14 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 12:50:21 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/12 09:31:01 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:44:42 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+bool	bsp( Point const a, Point const b, Point const c, Point const point);
 
 int	main()
 {
@@ -38,80 +38,6 @@ int	main()
 	std::cout << "p6 is " << (bsp(a, b, c, p6) ? "INSIDE" : "OUTSIDE") << " of the triangle abc" << std::endl;
 	std::cout << "p7 is " << (bsp(a, b, c, p7) ? "INSIDE" : "OUTSIDE") << " of the triangle abc" << std::endl;
 	std::cout << "b is " << (bsp(a, b, c, b) ? "INSIDE" : "OUTSIDE") << " of the triangle abc" << std::endl;
-
-/* 
-
-	Point	a;
-	Point	b(21.4f, (int)34.3f);
-	Point	c(3, (float)6);
-//	Point	d(c);
-	Point	d(12, 7);
-
-	Fixed	f1(0.0124f);
-	Fixed	f2(6);
-	Fixed	f3(-386);
-	Fixed	f4(f2 - 45);
-	Fixed	f5;
-	f5 = -3.636f;
-
-	if (f1 < f2)
-		std::cout << f1 << " < " << f2 << std::endl;
-	if (f2 > f3)
-		std::cout << f2 << " > " << f3 << std::endl;
-	if (f4 < f5)
-		std::cout << f4 << " < " << f5 << std::endl;
-	if (f5 < f1)
-		std::cout << f5 << " < " << f1 << std::endl << std::endl;
-
-	std::cout << f1 << " + " << f2 << " = " << f1 + f2 << std::endl; // (+) + (+)
-	std::cout << f2 << " + " << f3 << " = " << f2 + f3 << std::endl; // (+) + (-)
-	std::cout << f5 << " + " << f4 << " = " << f5 + f4 << std::endl; // (-) + (-)
-	std::cout << std::endl;
-	std::cout << f2 << " - " << f3 << " = " << f2 - f3 << std::endl; // (+) - (-)
-	std::cout << f1 << " - " << f2 << " = " << f1 - f2 << std::endl; // (+) - (+)
-	std::cout << f5 << " - " << f3 << " = " << f5 - f3 << std::endl; // (-) - (-)
-	std::cout << std::endl;
-	std::cout << f4 << " * " << f1 << " = " << f4 * f1 << std::endl; // (-) * (+)
-	std::cout << f1 << " * " << f2 << " = " << f1 * f2 << std::endl; // (+) * (+)
-	std::cout << f3 << " * " << f5 << " = " << f3 * f5 << std::endl; // (-) * (-)
-	std::cout << std::endl;
-	std::cout << f3 << " / " << f2 << " = " << f3 / f2 << std::endl; // (-) / (+)
-	std::cout << f2 << " / " << f1 << " = " << f2 / f1 << std::endl; // (+) / (+)
-	std::cout << f5 << " / " << f3 << " = " << f5 / f3 << std::endl; // (-) / (-)
-
-	std::cout << std::endl;
-	std::cout << "a : ";
-	std::cout << "(" << a.get_x() << ";" << a.get_y() << ")" << std::endl;
-
-	std::cout << "b : ";
-	std::cout << "(" << b.get_x() << ";" << b.get_y() << ")" << std::endl;
-
-	std::cout << "c : ";
-	std::cout << "(" << c.get_x() << ";" << c.get_y() << ")" << std::endl;
-
-	std::cout << "d : ";
-	std::cout << "(" << d.get_x() << ";" << d.get_y() << ")" << std::endl;
-
-	Point	e(466, 121);
-	Point	f(258, 312);
-	Point	g(721, 499);
-	Point	h(375.3636f, 379.253647f);
-
-	std::cout << bsp(e, f, g, h) << std::endl;
-
- */
-/* 
-//	std::cout << bsp(a, b, c, d) << std::endl;
-
-	std::cout << 255.99f / 32768 << std::endl;
-	std::cout << Fixed(255.99f) / Fixed(32768) << std::endl;
-//	std::cout << Fixed(0.3f) * Fixed(400) << std::endl;
-	std::cout << Fixed(8388607) << std::endl;
-
-	Fixed	test_8(0.03f);
-	std::cout << test_8.getRawBits() << std::endl;
-
- */
 
 	return (0);
 }

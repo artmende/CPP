@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 06:39:24 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/30 12:34:35 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:16:06 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,8 @@
 int	main(void)
 {
 	Fixed a;
-	std::cout << "After a" << std::endl;
-	Fixed b(a);
+ 	Fixed b( a );
 	Fixed c;
-
-	b.setRawBits(42);
 
 	c = b;
 

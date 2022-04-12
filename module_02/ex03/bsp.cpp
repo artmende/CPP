@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 13:22:20 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/12 09:31:34 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/12 10:05:00 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Fixed	get_w1_denominator(Point const &a, Point const &b, Point const &c)
 	return (by_ay * cx_ax - bx_ax * cy_ay);
 }
 
-bool bsp( Point const a, Point const b, Point const c, Point const point)
+bool	bsp( Point const a, Point const b, Point const c, Point const point)
 {
 	//	formula and method are coming from here :
 	//	https://www.youtube.com/watch?v=HYAgJN3x4GA

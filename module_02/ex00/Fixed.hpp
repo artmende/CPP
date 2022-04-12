@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:54:35 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/30 12:19:41 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:00:09 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@ public:
 	int		getRawBits() const;
 	void	setRawBits(int const raw);
 };
-
-std::ostream &	operator<<(std::ostream & o, Fixed const & i);
 
 #endif
