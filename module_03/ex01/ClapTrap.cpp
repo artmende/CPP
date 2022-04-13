@@ -6,11 +6,57 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:55:04 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/13 12:34:33 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:34:27 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+std::string	ClapTrap::get_name() const
+{
+	return (this->_name);
+}
+
+unsigned int	ClapTrap::get_hit_points() const
+{
+	return (this->_hit_points);
+}
+
+unsigned int	ClapTrap::get_energy_points() const
+{
+	return (this->_energy_points);
+}
+
+unsigned int	ClapTrap::get_attack_damage() const
+{
+	return (this->_attack_damage);
+}
+
+void	ClapTrap::set_name(std::string name)
+{
+	this->_name = name;
+}
+
+void	ClapTrap::set_hit_points(unsigned int amount)
+{
+	this->_hit_points = amount;
+}
+
+void	ClapTrap::set_energy_points(unsigned int amount)
+{
+this->_energy_points = amount;
+}
+
+void	ClapTrap::set_attack_damage(unsigned int	amount)
+{
+	this->_attack_damage = amount;
+}
+
+ClapTrap::ClapTrap(std::string name, unsigned int hit_points, unsigned int energy_points, unsigned int attack_damage) :
+_name(name), _hit_points(hit_points), _energy_points(energy_points), _attack_damage(attack_damage)
+{
+	std::cout << "ClapTrap Inheritance constructor called" << std::endl;
+}
 
 ClapTrap::ClapTrap() :
 _name("[No Name]"), _hit_points(10), _energy_points(10), _attack_damage(0)

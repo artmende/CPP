@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:55:02 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/13 11:46:26 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:26:00 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,17 @@ private:
 	unsigned int	_hit_points;
 	unsigned int	_energy_points;
 	unsigned int	_attack_damage;
+protected:
+	std::string		get_name() const;
+	unsigned int	get_hit_points() const;
+	unsigned int	get_energy_points() const;
+	unsigned int	get_attack_damage() const;
+	void			set_name(std::string name);
+	void			set_hit_points(unsigned int amount);
+	void			set_energy_points(unsigned int amount);
+	void			set_attack_damage(unsigned int	amount);
+
+	ClapTrap(std::string name, unsigned int hit_points, unsigned int energy_points, unsigned int attack_damage);
 public:
 	ClapTrap();
 	ClapTrap(std::string name);
@@ -34,5 +45,8 @@ public:
 	void 	takeDamage(unsigned int amount);
 	void 	beRepaired(unsigned int amount);
 };
+
+
+
 
 #endif
