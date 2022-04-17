@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/13 11:17:50 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/17 15:50:04 by artmende         ###   ########.fr       */
+/*   Created: 2022/04/12 11:54:59 by artmende          #+#    #+#             */
+/*   Updated: 2022/04/17 15:58:32 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
-# include "ClapTrap.hpp"
-
-class ScavTrap : public ClapTrap
+int	main()
 {
-public:
-	ScavTrap();
-	ScavTrap(std::string name);
-	ScavTrap(ScavTrap const & src);
-	~ScavTrap();
+	ClapTrap	noname, bob("Bob");
+	ScavTrap	alice("Alice");
+	FragTrap	eve("Eve"), evecop(eve);
 
-	ScavTrap &	operator=(ScavTrap const & rhs);
+	alice.attack("[No Name]");
+	noname.takeDamage(20);
+	noname.beRepaired(5);
+	eve.highFivesGuys();
+	alice.guardGate();
+	bob.attack("Eve_copy");
+	evecop.takeDamage(0);
 
-	void	guardGate() const;
-};
-
-#endif
+	return 0;
+}
