@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 11:17:50 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/13 12:51:18 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/17 15:32:46 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 
 class ScavTrap : public ClapTrap
 {
-private:
-
 public:
 	ScavTrap();
 	ScavTrap(std::string name);

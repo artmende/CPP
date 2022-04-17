@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:54:59 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/13 12:52:24 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/17 15:29:03 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main()
 {
-/* 	ClapTrap	bary("Bary"), josh("Josh"), matt("Matt");
+	ClapTrap	bary("Bary"), josh("Josh"), matt("Matt"), noname;
 
 	bary.attack("Josh");
 	josh.takeDamage(3);
@@ -25,14 +25,28 @@ int	main()
 	josh.takeDamage(8);
 	matt.attack("Josh");
 	josh.takeDamage(7);
-	josh.beRepaired(15); */
+	josh.beRepaired(15);
 
 
-	ScavTrap	scavy;
+	ScavTrap	scavy("Scavy");
 
 	scavy.beRepaired(42);
 	scavy.attack("itself");
+	scavy.guardGate();
+
+	bary = scavy;
+
+	bary.takeDamage(42);
 	
+	ClapTrap	testt(scavy);
+	
+	testt.attack("another being");
+
+
+	ClapTrap	jack("Jack");
+	ScavTrap	bob("Bob");
+
+	jack = bob;
 
 	return 0;
 }
