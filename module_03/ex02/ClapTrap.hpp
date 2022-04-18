@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:55:02 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/14 15:36:20 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:27:16 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 class ClapTrap
 {
-private:
+protected:
 	std::string			_name;
 	unsigned int		_hit_points;
 	unsigned int		_energy_points;
 	unsigned int		_attack_damage;
 	std::string const	_type;
-protected:
+
 	std::string		get_name() const;
 	unsigned int	get_hit_points() const;
 	unsigned int	get_energy_points() const;
