@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/12 11:54:55 by artmende          #+#    #+#              #
-#    Updated: 2022/04/20 14:18:58 by artmende         ###   ########.fr        #
+#    Created: 2022/04/20 14:19:15 by artmende          #+#    #+#              #
+#    Updated: 2022/04/20 17:44:00 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,31 +14,32 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
 
-SRCS =	./ClapTrap.cpp \
-		./ScavTrap.cpp \
-		./FragTrap.cpp \
-		./DiamondTrap.cpp \
+SRCS =	./Animal.cpp \
+		./Dog.cpp \
+		./Cat.cpp \
+		./WrongAnimal.cpp \
+		./WrongCat.cpp \
 		./main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -f
 
-NAME = ex03
+NAME = ex00
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
+	@$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 .cpp.o:
-	$(CXX) $(CXXFLAGS) -c $< -o $(<:.cpp=.o)
+	@$(CXX) $(CXXFLAGS) -c $< -o $(<:.cpp=.o)
 
 clean:
-	$(RM) $(OBJS)
+	@$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
