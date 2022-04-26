@@ -6,41 +6,52 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:20:08 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/26 15:20:44 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:16:06 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+
+#define ANIMAL_ARRAY_SIZE 2
 
 int	main()
 {
-	const Animal*	meta = new Animal();
-	const Animal*	j = new Dog();
-	const Animal*	i = new Cat();
+	Animal*	animal_array[ANIMAL_ARRAY_SIZE];
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+	for (size_t i = 0; i < ANIMAL_ARRAY_SIZE; i++)
+	{
+		if (i < ANIMAL_ARRAY_SIZE / 2)
+			animal_array[i] = new Dog();
+		else
+			animal_array[i] = new Cat();
+	}
+	
 
-	const WrongAnimal*	a = new WrongAnimal();
-	const WrongAnimal*	b = new WrongCat();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	std::cout << a->getType() << std::endl;
-	std::cout << b->getType() << std::endl;
-	a->makeSound();
-	b->makeSound();
-
-	delete meta;
-	delete j;
+	delete j;//should not create a leak
 	delete i;
-	delete a;
-	delete b;
 
+	Dog	d1, d2;
+	d1.store_idea(42, "A delicious bone");
+
+	d2 = d1;
+	
+	Dog	d3(d1);
+
+	d2.store_idea(42, "This is my home");
+	d3.store_idea(42, "Let's go for a walk in the park");
+
+	std::cout << "Idea of d1 : " << d1.retrieve_idea(42) << std::endl;
+	std::cout << "Idea of d2 : " << d2.retrieve_idea(42) << std::endl;
+	std::cout << "Idea of d3 : " << d3.retrieve_idea(42) << std::endl;
+
+	for (size_t i = 0; i < ANIMAL_ARRAY_SIZE; i++)
+	{
+		delete animal_array[i];
+	}
 	return (0);
 }
