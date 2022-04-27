@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/26 15:57:25 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/27 10:07:03 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : type("Random Animal")
+AAnimal::AAnimal() : type("Random Animal")
 {
 	std::cout << "Animal Default constructor called" << std::endl;
 }
 
-Animal::Animal(std::string type) : type(type)
+AAnimal::AAnimal(std::string type) : type(type)
 {
 	std::cout << "Animal String constructor called" << std::endl;
 }
 
-Animal::Animal(Animal const & src)
+AAnimal::AAnimal(AAnimal const & src)
 {
 	std::cout << "Animal Copy constructor called" << std::endl;
 	*this = src;
 }
 
-Animal::~Animal()
+AAnimal::~AAnimal()
 {
 	std::cout << "Animal destructor called" << std::endl;
 }
 
-Animal &	Animal::operator=(Animal const & rhs)
+AAnimal &	AAnimal::operator=(AAnimal const & rhs)
 {
 	if (this != &rhs)
 	{
@@ -42,12 +42,12 @@ Animal &	Animal::operator=(Animal const & rhs)
 	return (*this);
 }
 
-std::string	Animal::getType() const
+std::string	AAnimal::getType() const
 {
 	return (this->type);
 }
 
-void	Animal::makeSound() const
+void	AAnimal::makeSound() const
 {
 	std::cout << this->type << " : Miaouwaffwaff !" << std::endl;
 }

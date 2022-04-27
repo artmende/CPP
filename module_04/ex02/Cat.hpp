@@ -6,17 +6,17 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/26 15:47:52 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/27 10:10:11 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal
+class Cat : public AAnimal
 {
 private:
 	Brain*	_brain;

@@ -6,13 +6,13 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/20 14:19:15 by artmende          #+#    #+#              #
-#    Updated: 2022/04/20 17:44:00 by artmende         ###   ########.fr        #
+#    Updated: 2022/04/27 10:13:17 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRCS =	./Animal.cpp \
 		./Dog.cpp \

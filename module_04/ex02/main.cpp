@@ -6,11 +6,11 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:20:08 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/26 16:26:57 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/27 10:11:26 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 
@@ -20,7 +20,7 @@ int	main()
 {
 //	Animal	test("no type"); // Doesn't compile as Animal class is abstract
 
-	Animal*	animal_array[ANIMAL_ARRAY_SIZE];
+	AAnimal*	animal_array[ANIMAL_ARRAY_SIZE];
 
 	for (size_t i = 0; i < ANIMAL_ARRAY_SIZE; i++)
 	{
@@ -31,8 +31,8 @@ int	main()
 	}
 	
 
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 
 	delete j;//should not create a leak
 	delete i;

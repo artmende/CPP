@@ -6,15 +6,15 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/20 14:19:15 by artmende          #+#    #+#              #
-#    Updated: 2022/04/26 16:24:57 by artmende         ###   ########.fr        #
+#    Updated: 2022/04/27 10:13:49 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -Wshadow -Wno-shadow -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	./Animal.cpp \
+SRCS =	./AAnimal.cpp \
 		./Dog.cpp \
 		./Cat.cpp \
 		./Brain.cpp \

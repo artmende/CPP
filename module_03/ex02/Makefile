@@ -6,7 +6,7 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/12 11:54:55 by artmende          #+#    #+#              #
-#    Updated: 2022/04/17 15:36:31 by artmende         ###   ########.fr        #
+#    Updated: 2022/04/27 10:14:14 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -f
 
-NAME = ex01
+NAME = ex02
 
 all: $(NAME)
 
