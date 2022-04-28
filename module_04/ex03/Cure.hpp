@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/27 15:00:47 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/28 15:30:15 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	Cure &	operator=(Cure const & rhs);
 
 	AMateria*	clone() const;
-//	void		use(ICharacter& target);
+	void		use(ICharacter& target);
 };
 
 #endif

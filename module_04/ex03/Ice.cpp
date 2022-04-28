@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/27 14:33:54 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/28 16:31:51 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,15 @@ Ice::~Ice()
 Ice &	Ice::operator=(Ice const & rhs)
 {
 	return (*this);
+}
+
+AMateria*	Ice::clone() const
+{
+	AMateria*	ret = new Ice;
+	return (ret);
+}
+
+void	Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }

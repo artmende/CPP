@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 14:20:08 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/27 10:11:26 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/28 15:16:59 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int	main()
 {
-//	Animal	test("no type"); // Doesn't compile as Animal class is abstract
+//	AAnimal	test("no type"); // Doesn't compile as Animal class is abstract
 
 	AAnimal*	animal_array[ANIMAL_ARRAY_SIZE];
 
