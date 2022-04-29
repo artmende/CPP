@@ -6,23 +6,26 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/28 15:22:50 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/29 12:07:49 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHARACTER_HPP
 # define CHARACTER_HPP
 
-#include "ICharacter.hpp"
+# include "ICharacter.hpp"
+
+# define INVENTORY_SIZE 4
 
 class Character : public ICharacter
 {
 private:
 	std::string	_name;
-	AMateria*	_inventory[4];
-	AMateria**	_unequipped_materias; // initialize is to NULL
-public:
+	AMateria*	_inventory[INVENTORY_SIZE];
+	AMateria**	_unequipped_materias; // initialize it to NULL
 	Character();
+public:
+	Character(std::string name);
 	Character(Character const & src);
 	~Character();
 
