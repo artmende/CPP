@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/28 16:33:16 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/29 14:59:38 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cure::Cure() : AMateria("cure")
 {}
 
-Cure::Cure(Cure const & src) : AMateria("cure")
+Cure::Cure(Cure const & src) : AMateria(src.getType())
 {}
 
 Cure::~Cure()
@@ -23,6 +23,7 @@ Cure::~Cure()
 
 Cure &	Cure::operator=(Cure const & rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 

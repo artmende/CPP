@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/28 16:31:51 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/29 15:00:04 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Ice::Ice() : AMateria("ice")
 {}
 
-Ice::Ice(Ice const & src) : AMateria("ice")
+Ice::Ice(Ice const & src) : AMateria(src.getType())
 {}
 
 Ice::~Ice()
@@ -23,6 +23,7 @@ Ice::~Ice()
 
 Ice &	Ice::operator=(Ice const & rhs)
 {
+	(void)rhs;
 	return (*this);
 }
 

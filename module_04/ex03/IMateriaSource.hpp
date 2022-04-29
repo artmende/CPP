@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   CanonicalClass.hpp                                 :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/29 13:53:30 by artmende         ###   ########.fr       */
+/*   Created: 2022/04/29 13:47:32 by artmende          #+#    #+#             */
+/*   Updated: 2022/04/29 13:50:24 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef <classname_upper>_HPP
-# define <classname_upper>_HPP
+#ifndef IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
 # include <iostream>
+# include "AMateria.hpp"
 
-class <classname>
+class IMateriaSource
 {
-private:
-	/* data */
 public:
-	<classname>();
-	<classname>(<classname> const & src);
-	~<classname>();
+	virtual ~IMateriaSource() {}
 
-	<classname> &	operator=(<classname> const & rhs);
+	virtual void		learnMateria(AMateria*) = 0;
+	virtual AMateria*	createMateria(std::string const & type) = 0;
 };
 
 #endif

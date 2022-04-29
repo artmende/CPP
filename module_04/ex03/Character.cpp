@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/29 12:05:43 by artmende         ###   ########.fr       */
+/*   Updated: 2022/04/29 15:31:22 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,9 @@ Character::~Character()
 		delete this->_inventory[i];
 	}
 
-	std::cout << "Destructor of " << this->getName() << " called." << std::endl;
-	std::cout << "About to destruct the unequipped materias." << std::endl;
-
 	AMateria**	ptr = this->_unequipped_materias;
 	while (ptr && *ptr)
 	{
-		(*ptr)->use(*this); ///////////
 		delete *ptr;
 		ptr++;
 	}
@@ -79,17 +75,20 @@ std::string const &	Character::getName() const
 
 void	Character::equip(AMateria* m)
 {
-	// need to duplicate the materia from source to avoid double delete
+	if (m == NULL)
+		return ;
+
 	int	i = 0;
 	while (i < INVENTORY_SIZE && this->_inventory[i])
 		i++;
 	if (i < INVENTORY_SIZE)
 		this->_inventory[i] = m->clone();
+	// need to duplicate the materia from source to avoid double delete
 }
 
 void	Character::unequip(int idx)
 {
-	if (idx >= INVENTORY_SIZE || this->_inventory[idx] == NULL)
+	if (idx < 0 || idx >= INVENTORY_SIZE || this->_inventory[idx] == NULL)
 		return ;
 
 // Duplicating the unequipped array and adding the freshly unequipped materia at the end
@@ -103,7 +102,7 @@ void	Character::unequip(int idx)
 	AMateria**	new_unequipped = new AMateria *[current_size + 2];
 	new_unequipped[current_size + 1] = NULL;
 	new_unequipped[current_size] = this->_inventory[idx];
-	for (size_t i = 0; i < current_size; i++)
+	for (int i = 0; i < current_size; i++)
 	{
 		new_unequipped[i] = this->_unequipped_materias[i];
 	}
@@ -116,7 +115,7 @@ void	Character::unequip(int idx)
 
 void	Character::use(int idx, ICharacter& target)
 {
-	if (idx < INVENTORY_SIZE && this->_inventory[idx])
+	if (idx >= 0 && idx < INVENTORY_SIZE && this->_inventory[idx])
 	{
 		this->_inventory[idx]->use(target);
 	}
