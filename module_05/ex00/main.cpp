@@ -1,41 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/27 13:26:01 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/29 16:29:16 by artmende         ###   ########.fr       */
+/*   Created: 2022/05/03 12:24:18 by artmende          #+#    #+#             */
+/*   Updated: 2022/05/03 12:42:09 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#include <iostream>
+#include "Bureaucrat.hpp"
 
-AMateria::AMateria()
-{}
-
-AMateria::AMateria(std::string const & type) : type(type)
-{}
-
-AMateria::AMateria(AMateria const & src) : type(src.type)
-{}
-
-AMateria::~AMateria()
-{}
-
-AMateria &	AMateria::operator=(AMateria const & rhs)
+int	main()
 {
-	(void)rhs;
-	return (*this);
-}
+//	Bureaucrat	bob; // Doesnt compile as default constructor is private
 
-std::string const &	AMateria::getType() const
-{
-	return (this->type);
-}
+	Bureaucrat	bob("Bob", 54);
+	Bureaucrat	alice("Alice", -42); // exception
+	Bureaucrat	Eve("Eve", 199); // exception
 
-void	AMateria::use(ICharacter& target)
-{
-	(void)target;
+	bob.decrementGrade(200); // exception
+	bob.incrementGrade(200); // exception
+	bob.incrementGrade(); // works
+
+
+	return 0;
 }
