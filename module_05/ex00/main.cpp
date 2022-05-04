@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:24:18 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/04 15:14:11 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/04 17:32:08 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 
 	try
@@ -40,7 +40,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 
 	try
@@ -51,7 +51,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 
 	try
@@ -62,7 +62,7 @@ int	main()
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << '\n';
 	}
 
 	// Playing with Bureaucrats grades
@@ -77,7 +77,7 @@ int	main()
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cout << e.what() << '\n';
 		}
 		std::cout << *alice << std::endl;
 	}
@@ -92,7 +92,7 @@ int	main()
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cout << e.what() << '\n';
 		}
 		std::cout << *bob << std::endl;
 	}
@@ -107,7 +107,7 @@ int	main()
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cout << e.what() << '\n';
 		}
 		std::cout << *eve << std::endl;
 	}
@@ -122,7 +122,7 @@ int	main()
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cout << e.what() << '\n';
 		}
 		std::cout << *craig << std::endl;
 	}
