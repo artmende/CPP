@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/29 13:53:30 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/03 15:38:35 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 public:
 	<classname>();
 	<classname>(<classname> const & src);
-	~<classname>();
+	virtual ~<classname>();
 
 	<classname> &	operator=(<classname> const & rhs);
 };

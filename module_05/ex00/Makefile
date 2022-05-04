@@ -6,7 +6,7 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:47:04 by artmende          #+#    #+#              #
-#    Updated: 2022/05/03 10:47:21 by artmende         ###   ########.fr        #
+#    Updated: 2022/05/04 14:27:38 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,7 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	./AMateria.cpp \
-		./Character.cpp \
-		./Cure.cpp \
-		./Ice.cpp \
-		./MateriaSource.cpp \
+SRCS =	./Bureaucrat.cpp \
 		./main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
