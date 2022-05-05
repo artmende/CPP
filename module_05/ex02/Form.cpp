@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/05 12:05:14 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:05:26 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,14 @@ Form &	Form::operator=(Form const & rhs)
 	return (*this);
 }
 
+int	Form::select_zero_or_one() const
+{
+	time_t now = time(0);
+	tm	*ltm = localtime(&now);
+
+	return (ltm->tm_sec % 2);
+}
+
 std::string	Form::getName() const
 {
 	return (this->_name);
@@ -77,12 +85,6 @@ void	Form::beSigned(Bureaucrat const & b)
 	this->_isSigned = true;
 }
 
-void	Form::checkGradeToExecute(Bureaucrat const & executor) const
-{
-	if (executor.getGrade() > this->getGradeToExecute())
-		throw Form::GradeTooLowException();
-}
-
 const char*	Form::GradeTooHighException::what() const throw()
 {
 	return ("Grade too high");
@@ -91,6 +93,11 @@ const char*	Form::GradeTooHighException::what() const throw()
 const char*	Form::GradeTooLowException::what() const throw()
 {
 	return ("Grade too low");
+}
+
+const char*	Form::FormNotSignedException::what() const throw()
+{
+	return ("Form is not signed");
 }
 
 std::ostream &	operator<<(std::ostream & o, Form const & i)

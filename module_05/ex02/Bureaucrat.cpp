@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/05 12:11:12 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:35:47 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,20 @@ void	Bureaucrat::signForm(Form & f) const
 		std::cout << e.what() << ". ";
 		std::cout << this->getName() << " has a grade of " << this->getGrade() << " but the form needs " << f.getGradeToSign() << "." << std::endl;
 	}
+}
+
+void	Bureaucrat::executeForm(Form const & f) const
+{
+	try
+	{
+		f.execute(*this);
+		std::cout << "Bureaucrat " << this->getName() << " executes Form " << f.getName() << std::endl;
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Bureaucrat " << this->getName() << " cannot execute the form " << f.getName() << " due to ";
+		std::cout << e.what() << "." << std::endl;
+	}	
 }
 
 const char*	Bureaucrat::GradeTooHighException::what() const throw()

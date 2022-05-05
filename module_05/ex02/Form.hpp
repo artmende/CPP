@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/05 11:45:46 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:06:07 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FORM_HPP
 
 # include <iostream>
+# include <ctime>
 # include "Bureaucrat.hpp"
 
 class	Bureaucrat;
@@ -35,13 +36,13 @@ public:
 
 	Form &	operator=(Form const & rhs);
 
+	int				select_zero_or_one() const;
 	std::string		getName() const;
 	bool			getIsSigned() const;
 	int				getGradeToSign() const;
 	int				getGradeToExecute() const;
 	std::string		getTarget() const;
 	void			beSigned(Bureaucrat const & b);
-	void			checkGradeToExecute(Bureaucrat const & executor) const;
 	virtual void	execute(Bureaucrat const & executor) const = 0;
 
 	class GradeTooHighException : public std::exception
@@ -50,6 +51,11 @@ public:
 		virtual const char*	what() const throw();
 	};
 	class GradeTooLowException : public std::exception
+	{
+		public:
+		virtual const char*	what() const throw();
+	};
+	class FormNotSignedException : public std::exception
 	{
 		public:
 		virtual const char*	what() const throw();

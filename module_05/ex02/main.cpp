@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:24:18 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/05 12:08:17 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/05 15:33:31 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,27 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 int	main()
 {
 
-	Bureaucrat	alice("Alice", 149);
+	Bureaucrat	alice("Alice", 13);
 
-	Form* sh1 = new ShrubberyCreationForm("home");
+	Form* sh1 = new ShrubberyCreationForm("coucou");
 
 	alice.signForm(*sh1);
+	alice.executeForm(*sh1);
+	Form* sh2 = new RobotomyRequestForm("Your mom");
 
-	Form* sh2 = new ShrubberyCreationForm((ShrubberyCreationForm &)*sh1);
 
-	std::cout << *sh1 << std::endl;
-	std::cout << *sh2 << std::endl;
+
+
+	alice.signForm(*sh2);
+	alice.executeForm(*sh2);
+
+//	std::cout << *sh1 << std::endl;
+//	std::cout << *sh2 << std::endl;
 
 
 /* 	Bureaucrat	*alice = NULL, *bob = NULL, *eve = NULL, *craig = NULL;

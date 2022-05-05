@@ -6,7 +6,7 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:47:04 by artmende          #+#    #+#              #
-#    Updated: 2022/05/05 12:01:46 by artmende         ###   ########.fr        #
+#    Updated: 2022/05/05 15:29:48 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 SRCS =	./Bureaucrat.cpp \
 		./Form.cpp \
 		./ShrubberyCreationForm.cpp \
+		./RobotomyRequestForm.cpp \
 		./main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)

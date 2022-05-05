@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/04 17:07:53 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:32:41 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ public:
 	void		decrementGrade();
 	void		decrementGrade(unsigned int decrement);
 	void		signForm(Form & f) const;
+	void		executeForm(Form const & f) const;
 
 	class GradeTooHighException : public std::exception
 	{
