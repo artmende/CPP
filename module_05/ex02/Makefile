@@ -6,7 +6,7 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 10:47:04 by artmende          #+#    #+#              #
-#    Updated: 2022/05/05 15:29:48 by artmende         ###   ########.fr        #
+#    Updated: 2022/05/06 13:13:13 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRCS =	./Bureaucrat.cpp \
 		./Form.cpp \
 		./ShrubberyCreationForm.cpp \
 		./RobotomyRequestForm.cpp \
+		./PresidentialPardonForm.cpp \
 		./main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)

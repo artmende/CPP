@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/05 14:32:41 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/06 13:48:28 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 	std::string const	_name;
 	int					_grade;
 	Bureaucrat();
+	void	setGrade(int newGrade);
 public:
 	Bureaucrat(std::string name, int grade);
 	Bureaucrat(Bureaucrat const & src);
