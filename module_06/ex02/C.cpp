@@ -1,48 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.cpp                                           :+:      :+:    :+:   */
+/*   C.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/11 12:50:22 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/11 12:53:17 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
+#include "C.hpp"
 
-Data::Data() : _data("")
+C::C()
 {}
 
-Data::Data(std::string data) : _data(data)
-{}
-
-Data::Data(Data const & src) : _data(src._data)
-{}
-
-Data::~Data()
-{}
-
-Data &	Data::operator=(Data const & rhs)
+C::C(C const & src)
 {
-	if (this != &rhs)
-	{
-		this->_data = rhs.getData();
-	}
+	(void)src;
+}
+
+C::~C()
+{}
+
+C &	C::operator=(C const & rhs)
+{
+	(void)rhs;
 	return (*this);
-}
-
-std::string	Data::getData() const
-{
-	return (this->_data);
-}
-
-uintptr_t	serialize(Data* ptr)
-{
-	return (reinterpret_cast<uintptr_t>(ptr));
-}
-Data*	deserialize(uintptr_t raw)
-{
-	return (reinterpret_cast<Data*>(raw));
 }
