@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/11 12:44:04 by artmende          #+#    #+#              #
-#    Updated: 2022/05/12 14:11:35 by artmende         ###   ########.fr        #
+#    Created: 2022/05/12 14:07:10 by artmende          #+#    #+#              #
+#    Updated: 2022/05/12 14:11:27 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,17 +14,13 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	./Base.cpp \
-		./A.cpp \
-		./B.cpp \
-		./C.cpp \
-		./main.cpp \
+SRCS =	./main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -f
 
-NAME = Identify_real_type
+NAME = ex00
 
 all: $(NAME)
 
