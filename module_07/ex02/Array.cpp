@@ -6,11 +6,11 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/18 11:26:41 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/18 14:35:39 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Array.hpp"
+/* #include "Array.hpp"
 
 template<typename T>
 Array::Array()
@@ -35,3 +35,4 @@ Array &	Array::operator=(Array const & rhs)
 	}
 	return (*this);
 }
+ */
