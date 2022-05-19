@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 13:29:59 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/19 11:12:17 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:54:52 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,13 @@ int	fill_intermediate_str(std::string *str, std::string infile_name)
 
 void	replace_word_in_str(std::string *str, std::string w1, std::string w2)
 {
-	size_t	index;
+	size_t	index = 0;
 	
-	while (std::string::npos != (index = str->find(w1, 0)))
+	while (std::string::npos != (index = str->find(w1, index)))
 	{
 		str->erase(index, w1.length());
 		str->insert(index, w2);
+		index += w2.length();
 	}
 }
 
