@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/26 13:29:59 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/10 14:01:14 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:12:17 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	std::string	intermediate_string = "";
-	if (1 == fill_intermediate_str(&intermediate_string, argv[1]))
+	if (-1 == fill_intermediate_str(&intermediate_string, argv[1]))
 		return (1);
 	replace_word_in_str(&intermediate_string, argv[2], argv[3]);
 	return (create_outfile(argv[1], intermediate_string));
