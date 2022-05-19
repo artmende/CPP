@@ -6,15 +6,15 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:33:50 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/29 18:10:50 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:25:11 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int	main(void)
 {
-	Karen	karen;
+	Harl	karen;
 
 	std::cout << "Level 'DEBUG' :" << std::endl;
 	karen.complain("DEBUG");

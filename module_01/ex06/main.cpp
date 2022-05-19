@@ -6,11 +6,11 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/29 18:42:44 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/29 19:29:33 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:25:11 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Karen.hpp"
+#include "Harl.hpp"
 
 int	main(int argc, char **argv)
 {
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 		std::cout << "Please enter a single argument" << std::endl;
 		return (1);
 	}
-	Karen	karen;
+	Harl	karen;
 	std::string	level_array[4] =
 	{
 		"DEBUG",

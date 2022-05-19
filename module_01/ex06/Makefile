@@ -6,7 +6,7 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/29 18:33:34 by artmende          #+#    #+#              #
-#    Updated: 2022/03/29 19:27:06 by artmende         ###   ########.fr        #
+#    Updated: 2022/05/19 11:44:48 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,14 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -Werror=implicit-fallthrough=0 -std=c++98
 
-SRCS =	./Karen.cpp \
+SRCS =	./Harl.cpp \
 		./main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -f
 
-NAME = karenFilter
+NAME = harlFilter
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 18:33:47 by artmende          #+#    #+#              #
-#    Updated: 2022/03/28 18:34:50 by artmende         ###   ########.fr        #
+#    Updated: 2022/05/19 11:25:11 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,14 +14,14 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	./Karen.cpp \
+SRCS =	./Harl.cpp \
 		./main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -f
 
-NAME = Karen_2.0
+NAME = Harl_2.0
 
 all: $(NAME)
 

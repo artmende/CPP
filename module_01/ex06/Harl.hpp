@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Karen.hpp                                          :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 18:33:54 by artmende          #+#    #+#             */
-/*   Updated: 2022/03/29 17:58:58 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/19 11:25:11 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 
-class Karen
+class Harl
 {
 private:
 	void	_debug(void) const;
@@ -23,8 +23,8 @@ private:
 	void	_warning(void) const;
 	void	_error(void) const;
 public:
-	Karen();
-	~Karen();
+	Harl();
+	~Harl();
 	void	complain(std::string level) const;
 };
 
