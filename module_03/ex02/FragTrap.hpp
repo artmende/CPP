@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 15:36:57 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/17 15:49:43 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:50:34 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 
 	FragTrap &	operator=(FragTrap const & rhs);
 
-	void	highFivesGuys() const;
+	void	highFivesGuys();
 };
 
 #endif

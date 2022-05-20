@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 11:18:56 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/17 15:49:50 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:40:14 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,15 @@ ScavTrap &	ScavTrap::operator=(ScavTrap const & rhs)
 	return (*this);
 }
 
-void	ScavTrap::guardGate() const
+void	ScavTrap::guardGate()
 {
 	if (this->get_hit_points() == 0)
 		std::cout << this->get_type() << " " << this->get_name() << " is dead and cannot enter Gate keeper mode." << std::endl;
+	else if (this->get_energy_points() == 0)
+		std::cout << this->get_type() << " " << this->_name << " doesn't have any Energy Point left and thus cannot enter Gate keeper mode." << std::endl;
 	else
+	{
+		this->_energy_points--;
 		std::cout << this->get_type() << " " << this->get_name() << " has entered Gate keeper mode." << std::endl;
+	}
 }

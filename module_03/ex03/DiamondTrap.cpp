@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 16:04:21 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/18 18:58:49 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:01:27 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ ClapTrap(src._name + "_copy_clap_name", src.get_hit_points(), src.get_energy_poi
 
 DiamondTrap::~DiamondTrap()
 {
+	std::cout << "DiamondTrap Destructor called" << std::endl;
 }
 
 DiamondTrap &	DiamondTrap::operator=(DiamondTrap const & rhs)
@@ -48,7 +49,7 @@ DiamondTrap &	DiamondTrap::operator=(DiamondTrap const & rhs)
 	return (*this);
 }
 
-void	DiamondTrap::whoAmI()
+void	DiamondTrap::whoAmI() const
 {
 	std::cout << this->get_type() << " " << this->get_name() << " : \"Who am I ?? ";
 	std::cout << "I am " << this->_name << " but I also have a ClapTrap name which is " << this->get_name() << "\"" << std::endl;

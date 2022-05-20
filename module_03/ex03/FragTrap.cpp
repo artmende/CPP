@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 15:38:03 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/18 18:40:00 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:55:11 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,17 @@ FragTrap &	FragTrap::operator=(FragTrap const & rhs)
 	return (*this);
 }
 
-void	FragTrap::highFivesGuys() const
+void	FragTrap::highFivesGuys()
 {
 	if (this->get_hit_points() == 0)
 		std::cout << this->get_type() << " " << this->get_name() << " is dead and cannot request a High-Five." << std::endl;
+	else if (this->get_energy_points() == 0)
+		std::cout << this->get_type() << " " << this->_name << " doesn't have any Energy Point left and thus cannot request a High-Five." << std::endl;
 	else
+	{
+		this->_energy_points--;
 		std::cout << this->get_type() << " " << this->get_name() << " : \"High Five guys !!\"" << std::endl;
+	}
 }
 
 void	FragTrap::attack(std::string const & target)

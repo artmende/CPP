@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:54:59 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/13 10:56:16 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:29:50 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int	main()
 	matt.attack("Josh");
 	josh.takeDamage(7);
 	josh.beRepaired(15);
+
+	for (size_t i = 0; i < 10; i++)
+	{
+		matt.beRepaired(1);
+	}
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 11:17:50 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/18 18:37:20 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 17:53:19 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 
 	ScavTrap &	operator=(ScavTrap const & rhs);
 
-	void	guardGate() const;
+	void	guardGate();
 	void	attack(std::string const & target);
 };
 

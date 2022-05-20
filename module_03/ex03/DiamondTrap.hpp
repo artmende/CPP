@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/17 16:04:26 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/18 18:39:45 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:01:33 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ public:
 
 	DiamondTrap &	operator=(DiamondTrap const & rhs);
 
-	void	whoAmI();
+	void	whoAmI() const;
 
 	using ScavTrap::attack;
 };
