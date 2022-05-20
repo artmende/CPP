@@ -6,30 +6,30 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:55:46 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/12 11:29:28 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:08:02 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 ////////////////////	Constructors / Destructors	////////////////////
-Fixed::Fixed() : _nbr_of_fract_bits(8)
+Fixed::Fixed()
 {
 	this->setRawBits(0);
 }
 
-Fixed::Fixed(Fixed const & src) : _nbr_of_fract_bits(8)
+Fixed::Fixed(Fixed const & src)
 {
 	*this = src;
 }
 
-Fixed::Fixed(int const i) : _nbr_of_fract_bits(8)
+Fixed::Fixed(int const i)
 {
 	this->setRawBits(i << this->_nbr_of_fract_bits);
 	// bit shifting to add 0 to the right. because i is an integer, nothing after the point
 }
 
-Fixed::Fixed(float const f) : _nbr_of_fract_bits(8)
+Fixed::Fixed(float const f)
 {
 	this->setRawBits(roundf(f * (1 << this->_nbr_of_fract_bits)));
 	// Multiply the float by 2 to the power of _nbr_of_fract_bits

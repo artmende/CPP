@@ -6,32 +6,32 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:55:46 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/12 11:24:58 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 10:58:22 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _nbr_of_fract_bits(8)
+Fixed::Fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->setRawBits(0);
 }
 
-Fixed::Fixed(Fixed const & src) : _nbr_of_fract_bits(8)
+Fixed::Fixed(Fixed const & src)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
 }
 
-Fixed::Fixed(int const i) : _nbr_of_fract_bits(8)
+Fixed::Fixed(int const i)
 {
 	std::cout << "Int constructor called" << std::endl;
 	this->setRawBits(i << this->_nbr_of_fract_bits);
 	// bit shifting to add 0 to the right. because i is an integer, nothing after the point
 }
 
-Fixed::Fixed(float const f) : _nbr_of_fract_bits(8)
+Fixed::Fixed(float const f)
 {
 	std::cout << "Float constructor called" << std::endl;
 	this->setRawBits(roundf(f * (1 << this->_nbr_of_fract_bits)));

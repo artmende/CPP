@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/30 11:54:35 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/04 08:59:20 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/20 11:07:46 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed
 {
 private:
 	int			_value;
-	int const	_nbr_of_fract_bits;
+	static int const	_nbr_of_fract_bits = 8;
 public:
 	Fixed();
 	Fixed(Fixed const & src);
