@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/20 15:16:31 by artmende          #+#    #+#              #
-#    Updated: 2022/05/23 17:42:03 by artmende         ###   ########.fr        #
+#    Created: 2022/05/23 17:45:33 by artmende          #+#    #+#              #
+#    Updated: 2022/05/23 17:46:55 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,27 +14,28 @@ CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRCS =	./main.cpp \
+SRCS =	./Span.cpp \
+		./main.cpp \
 
 OBJS = $(SRCS:.cpp=.o)
 
 RM = rm -f
 
-NAME = easyfind
+NAME = span
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
+	@$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 .cpp.o:
-	$(CXX) $(CXXFLAGS) -c $< -o $(<:.cpp=.o)
+	@$(CXX) $(CXXFLAGS) -c $< -o $(<:.cpp=.o)
 
 clean:
-	$(RM) $(OBJS)
+	@$(RM) $(OBJS)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: fclean all
 
