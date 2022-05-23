@@ -6,13 +6,13 @@
 #    By: artmende <artmende@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/20 15:16:31 by artmende          #+#    #+#              #
-#    Updated: 2022/05/20 17:13:41 by artmende         ###   ########.fr        #
+#    Updated: 2022/05/22 15:12:18 by artmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CXX = c++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror #-std=c++98
 
 SRCS =	./main.cpp \
 

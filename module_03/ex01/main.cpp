@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/12 11:54:59 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/17 15:29:03 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/23 10:28:02 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,39 +14,26 @@
 
 int	main()
 {
-	ClapTrap	bary("Bary"), josh("Josh"), matt("Matt"), noname;
 
-	bary.attack("Josh");
-	josh.takeDamage(3);
-	matt.attack("Josh");
-	josh.takeDamage(4);
-	josh.beRepaired(10);
-	bary.attack("Josh");
-	josh.takeDamage(8);
-	matt.attack("Josh");
-	josh.takeDamage(7);
-	josh.beRepaired(15);
+	ScavTrap	*test = new ScavTrap("temp");
+	test->guardGate();
+	test->attack("itself");
+	test->takeDamage(20);
+	test->beRepaired(19);
+	delete test;
 
+	std::cout << std::endl;
 
+	ClapTrap	bary("Bary");
 	ScavTrap	scavy("Scavy");
 
-	scavy.beRepaired(42);
-	scavy.attack("itself");
+	bary.attack("Scavy");
+	scavy.takeDamage(0);
+	scavy.attack("Bary");
+	bary.takeDamage(20);
 	scavy.guardGate();
-
-	bary = scavy;
-
-	bary.takeDamage(42);
-	
-	ClapTrap	testt(scavy);
-	
-	testt.attack("another being");
-
-
-	ClapTrap	jack("Jack");
-	ScavTrap	bob("Bob");
-
-	jack = bob;
+	bary.attack("Scavy");
+	scavy.beRepaired(42);
 
 	return 0;
 }
