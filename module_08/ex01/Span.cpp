@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/23 18:46:39 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/24 09:53:17 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,34 +40,34 @@ void	Span::addNumber(int nbr)
 {
 	if (this->_v.size() + 1 > this->_n)
 		throw Span::TooManyNumbersException();
-//	this->_v.push_back(nbr);
-	this->_v.insert(nbr);
+	this->_v.push_back(nbr);
 }
 
-int	Span::shortestSpan() const
+int	Span::shortestSpan()
 {
 	if (this->_v.size() < 2)
 		throw Span::NotEnoughNumbersForSpanException();
-	std::multiset<const int>::iterator	i, j;
+	std::sort(this->_v.begin(), this->_v.end());
+	std::vector<int>::const_iterator	i, j;
 	i = this->_v.begin();
 	j = i;
 	++j;
-	int	min = std::max(*i, *j) - std::min(*i, *j);
+	int	shortest = std::max(*i, *j) - std::min(*i, *j);
 	while (j != this->_v.end())
 	{
-		if ((std::max(*i, *j) - std::min(*i, *j)) < min)
-			min = std::max(*i, *j) - std::min(*i, *j);
+		if ((std::max(*i, *j) - std::min(*i, *j)) < shortest)
+			shortest = std::max(*i, *j) - std::min(*i, *j);
 		++i;
 		++j;
 	}
-	return (min);
+	return (shortest);
 }
 
 int	Span::longestSpan() const
 {
 	if (this->_v.size() < 2)
 		throw Span::NotEnoughNumbersForSpanException();
-	return (std::max_element(this->_v.begin(), this->_v.end()) - std::min_element(this->_v.begin(), this->_v.end()));
+	return (*(std::max_element(this->_v.begin(), this->_v.end())) - *(std::min_element(this->_v.begin(), this->_v.end())));
 }
 
 const char*	Span::TooManyNumbersException::what() const throw()
