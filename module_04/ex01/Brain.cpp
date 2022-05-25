@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 14:23:29 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/26 15:17:21 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:22:34 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Brain &	Brain::operator=(Brain const & rhs)
 {
 	if (this != &rhs)
 	{
-		for (size_t i = 0; i < 100; i++)
+		for (size_t i = 0; i < NBR_OF_IDEAS; i++)
 		{
 			this->_ideas[i] = rhs._ideas[i];
 		}

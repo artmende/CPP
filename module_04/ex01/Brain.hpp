@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 14:20:01 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/26 15:15:58 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:20:24 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ private:
 public:
 	Brain();
 	Brain(Brain const & src);
-	~Brain();
+	virtual ~Brain();
 
 	Brain &	operator=(Brain const & rhs);
 

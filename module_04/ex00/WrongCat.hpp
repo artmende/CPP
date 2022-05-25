@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 17:42:59 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/20 17:46:10 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:15:49 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 public:
 	WrongCat();
 	WrongCat(WrongCat const & src);
-	~WrongCat();
+	virtual ~WrongCat();
 
 	WrongCat &	operator=(WrongCat const & rhs);
 
