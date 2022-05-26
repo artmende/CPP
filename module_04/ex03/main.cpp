@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/29 14:43:04 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/29 15:30:37 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/25 14:20:55 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ int	main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 
+	// copy constructor
 	ICharacter*	you = new Character(*((Character*)me));
 
+	// unequip mataria that was created by copy constructor.
+	// Also unequip wrong index, no bug
 	for (size_t i = 0; i < 10; i++)
 	{
 		me->unequip(i);
@@ -57,11 +60,12 @@ int	main()
 	you->use(0, *bob);
 	you->use(1, *bob);
 
+	// assignment operator : materia are deleted and duplicated. No bug
 	*you = *me;
 	*you = *bob;
 	*you = *me;
 
-
+	// unequip and use with wrong index. No bug
 	you->unequip(-42);
 	you->use(-18, *bob);
 

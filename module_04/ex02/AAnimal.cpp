@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:37:43 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/27 10:07:03 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:34:27 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ std::string	AAnimal::getType() const
 	return (this->type);
 }
 
-void	AAnimal::makeSound() const
+/* void	AAnimal::makeSound() const
 {
 	std::cout << this->type << " : Miaouwaffwaff !" << std::endl;
-}
+} */

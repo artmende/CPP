@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/04/26 15:47:52 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/25 13:19:46 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ private:
 public:
 	Cat();
 	Cat(Cat const & src);
-	~Cat();
+	virtual ~Cat();
 
 	Cat &	operator=(Cat const & rhs);
 
-	void	makeSound() const;
+	virtual void	makeSound() const;
 	void		store_idea(unsigned int index, std::string idea);
 	std::string	retrieve_idea(unsigned int index) const;
 };
