@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:24:18 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/04 17:55:03 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/26 14:58:51 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ int	main()
 	{
 		std::cout << e.what() << '\n';
 	}
+
+	std::cout << std::endl;
 
 	// Constructing forms
 

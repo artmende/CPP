@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 12:24:18 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/06 15:33:29 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:16:23 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,23 @@ int	main()
 
 	alice.signForm(*sh);
 	alice.executeForm(*sh);
+	std::cout << std::endl;
 	trudy.signForm(*rb);
 	alice.executeForm(*rb);
+	std::cout << std::endl;
 	trudy.incrementGrade(54);
 	trudy.signForm(*rb);
 	trudy.executeForm(*rb);
+	std::cout << std::endl;
 
 	std::cout << trudy.getName() << " is now trying to get Bob to pardon him..." << std::endl;
 	bob.signForm(*pp);
+	std::cout << std::endl;
 	alice.signForm(*pp);
+	std::cout << std::endl;
 	trudy.executeForm(*pp);
 	std::cout << "Will " << trudy.getName() << " ever be pardoned ? Let's call the manager !" << std::endl;
+	std::cout << std::endl;
 
 	Bureaucrat	general_manager("General Manager", 0);
 
