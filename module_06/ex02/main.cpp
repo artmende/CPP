@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 12:44:18 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/11 14:12:38 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/27 11:10:56 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	identify(Base& p)
 	{
 		A &	a = dynamic_cast<A &>(p);
 		std::cout << "A" << std::endl;
-		(void)a;
+		(void)a; // Not a cast. It's just a way to mute the compiler warning.
 		return ;
 	}
 	catch(const std::exception& e)
@@ -66,7 +66,7 @@ void	identify(Base& p)
 	{
 		B &	b = dynamic_cast<B &>(p);
 		std::cout << "B" << std::endl;
-		(void)b;
+		(void)b; // Not a cast. It's just a way to mute the compiler warning.
 		return ;
 	}
 	catch(const std::exception& e)
@@ -76,7 +76,7 @@ void	identify(Base& p)
 	{
 		C &	c = dynamic_cast<C &>(p);
 		std::cout << "C" << std::endl;
-		(void)c;
+		(void)c; // Not a cast. It's just a way to mute the compiler warning.
 		return ;
 	}
 	catch(const std::exception& e)
