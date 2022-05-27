@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/18 15:04:05 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/27 15:30:02 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ public:
 	Array() : _values(NULL), _size(0) {}
 	Array(unsigned int size) : _size(size)
 	{
-		this->_values = new T[this->_size];
+		this->_values = new T[this->_size](); // "()" initialize the array fields to 0 when possible
 	}
 	Array(Array const & src) : _size(src.size())
 	{
@@ -67,6 +67,7 @@ public:
 	{
 		return (this->_size);
 	}
+
 	class IndexOutOfBoundException : public std::exception
 	{
 		public:
