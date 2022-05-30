@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 18:43:08 by artmende          #+#    #+#             */
-/*   Updated: 2022/05/24 17:51:57 by artmende         ###   ########.fr       */
+/*   Updated: 2022/05/30 15:38:09 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,61 +19,76 @@
 
 int	main()
 {
-	Span sp = Span(10);
-	sp.addNumber(5);
-	sp.addNumber(10);
-	sp.addNumber(20);
-	sp.addNumber(-115);
-	sp.addNumber(-11);
-	sp.addNumber(5);
+	// Test with small Span, test exception.
 
-/* 	std::srand(time(NULL));
+	Span	*sp = new Span(6);
 
-	std::vector<int> v, y;
+	sp->addNumber(5);
+	sp->addNumber(10);
+	sp->addNumber(20);
+	sp->addNumber(-115);
+	sp->addNumber(-11);
+	sp->addNumber(13);
 
-	for (size_t i = 0; i < 20; i++)
+	std::cout << sp->shortestSpan() << std::endl;
+	std::cout << sp->longestSpan() << std::endl;
+
+	try
 	{
-		v.push_back((rand() % 1000) * (i % 5));
+		sp->addNumber(12); // will throw an exception because Span is full
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 	}
 
-	for (std::vector<int>::iterator i = v.begin(); i != v.end(); i++)
-	{
-		std::cout << *i << std::endl;
-	}
+	delete sp;
 
 	std::cout << std::endl;
 
-	y = v;
+	// Test with big Span
 
+	std::srand(time(NULL));
 
-	std::sort(v.begin(), v.end());
-*/
+	sp = new Span(19000);
+
+	while (true)
+	{
+		try
+		{
+			sp->addNumber(rand());
+		}
+		catch(const std::exception& e)
+		{
+			break;
+		}
+	}
+
+	std::cout << sp->shortestSpan() << std::endl;
+	std::cout << sp->longestSpan() << std::endl;
+
+	delete sp;
+
+	std::cout << std::endl;
+
+	// Test adding number by range of iterators
+
 	std::list<int>	l;
 	for (size_t i = 0; i < 4; i++)
 	{
 		l.push_back(rand() % 5);
 	}
-	
-/*
-	v.insert(v.end(), l.begin(), l.end());
 
-	for (std::vector<int>::iterator i = v.begin(); i != v.end(); i++)
+	sp = new Span(l.size());
+
+	sp->addRangeOfNumbers<std::list<int> >(l.begin(), l.end());
+
+	for (size_t i = 0; i < sp->get_raw_vector().size(); i++)
 	{
-		std::cout << *i << std::endl;
+		std::cout << sp->get_raw_vector()[i] << std::endl;
 	}
- */
 
-	std::cout << sp.shortestSpan() << std::endl;
-	std::cout << sp.longestSpan() << std::endl;
-
-	sp.addRangeOfNumbers<std::list<int> >(l.begin(), l.end());
-
-	for (size_t i = 0; i < sp.get_raw_vector().size(); i++)
-	{
-		std::cout << sp.get_raw_vector()[i] << std::endl;
-	}
-	
-	
+	delete sp;
 
 return 0;
 }
