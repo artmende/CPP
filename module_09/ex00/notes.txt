@@ -1,3 +1,7 @@
 about dates : 
 https://stackoverflow.com/questions/46181952/comparing-dates-in-c
 
+https://stackoverflow.com/questions/308390/convert-a-string-to-a-date-in-c
+
+https://www.youtube.com/watch?v=YjGrUVGKcgs
+
