@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/20 16:02:25 by artmende          #+#    #+#             */
-/*   Updated: 2023/12/27 17:30:56 by artmende         ###   ########.fr       */
+/*   Updated: 2023/12/29 15:43:43 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,22 @@
 # include <iostream>
 # include <map>
 # include <ctime>
+# include <fstream>
 
 class BitcoinExchange
 {
 private:
-	/* data */
+	std::string					_data_path;
+	std::map<time_t, double>	_value_map;
 public:
 	BitcoinExchange();
+	BitcoinExchange(std::string data_path);
 	BitcoinExchange(BitcoinExchange const & src);
 	virtual ~BitcoinExchange();
 
 	BitcoinExchange &	operator=(BitcoinExchange const & rhs);
+
+	void	fill_value_map();
 };
 
 #endif

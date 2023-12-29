@@ -6,7 +6,7 @@
 /*   By: artmende <artmende@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/26 16:44:02 by artmende          #+#    #+#             */
-/*   Updated: 2023/12/27 17:50:57 by artmende         ###   ########.fr       */
+/*   Updated: 2023/12/29 15:31:00 by artmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,15 @@
 // for each line of input file, get the date in the correct format, and browse the map in search of the date
 
 
+
 int	main(int argc, char **argv)
 {
+	std::string	data_path = "./data.csv";
+
+	BitcoinExchange	btc(data_path);
+
+	btc.fill_value_map();
+
 	(void)argc;
 	(void)argv;
 
@@ -34,6 +41,7 @@ int	main(int argc, char **argv)
 	std::cout << ctime(&now) << std::endl;
 
 	localtime(&now);
+
 
 	return 0;
 }
